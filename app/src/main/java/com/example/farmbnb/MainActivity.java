@@ -2,6 +2,7 @@ package com.example.farmbnb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,16 +34,20 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
 
 
+        // Method for Logging in using the input fields
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String user_name = editUsername.getText().toString();
                 String password = editPassword.getText().toString();
 
+                // Code to check if input fields are empty
                 if (user_name.isEmpty() || password.isEmpty())
                 {
                     Toast.makeText( MainActivity.this, "One or more fields are empty please type in all your details",Toast.LENGTH_SHORT).show();
                 }
+
+                // Code to check for successful login and to send them to the home screen
                 else
                 {
                     Login = LoginCheck(user_name,password);
@@ -50,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
                     if (Login)
                     {
                         Toast.makeText( MainActivity.this, "Login Successful",Toast.LENGTH_SHORT).show();
+                        Intent HomePage = new Intent(MainActivity.this, HomePage.class);
+                        startActivity(HomePage);
+
                     }
+
+                    // Code that returns error if login details are incorrect
                     else{
                         Login = false;
                         Toast.makeText( MainActivity.this, "Incorrect Login Details",Toast.LENGTH_SHORT).show();
@@ -59,8 +69,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnSignUp.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                openSignUpPage();
+            }
+        });
 
 
+    }
+
+    public void openSignUpPage(){
+        Intent Signup = new Intent(MainActivity.this, SignUp.class);
+        startActivity(Signup);
     }
 
     private boolean LoginCheck (String Usrname, String UsrPassword){
