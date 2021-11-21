@@ -70,7 +70,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btnViewAndManageBookings2"
+        android:id="@+id/btnMakeABooking"
         android:layout_width="205dp"
         android:layout_height="87dp"
         android:layout_marginTop="32dp"
@@ -80,13 +80,13 @@
         app:layout_constraintTop_toBottomOf="@+id/btnViewAndManageBookings" />
 
     <Button
-        android:id="@+id/btnViewAndManageBookings3"
+        android:id="@+id/btnViewBookingHistory"
         android:layout_width="205dp"
         android:layout_height="87dp"
         android:text="View Booking History"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnViewAndManageBookings2"
+        app:layout_constraintTop_toBottomOf="@+id/btnMakeABooking"
         app:layout_constraintVertical_bias="0.176" />
 </androidx.constraintlayout.widget.ConstraintLayout>
