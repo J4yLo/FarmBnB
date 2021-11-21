@@ -46,7 +46,7 @@ public class SignUp extends AppCompatActivity {
                 String Address = editSignUpAddress.getText().toString();
 
                 if (Username.isEmpty() || Password.isEmpty() || Phone.isEmpty() || Address.isEmpty()){
-                    Toast.makeText(MainActivity.this, "One or more fields are empty please type in all your details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "One or more fields are empty please type in all your details", Toast.LENGTH_SHORT).show();
                 }
 
 
