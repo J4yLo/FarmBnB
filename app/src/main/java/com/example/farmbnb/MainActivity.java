@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         editUsername = findViewById(R.id.editUsername);
         editPassword = findViewById(R.id.editPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        btnSignUp = findViewById(R.id.btnSignUp);
 
 
         // Method for Logging in using the input fields
@@ -42,40 +43,37 @@ public class MainActivity extends AppCompatActivity {
                 String password = editPassword.getText().toString();
 
                 // Code to check if input fields are empty
-                if (user_name.isEmpty() || password.isEmpty())
-                {
-                    Toast.makeText( MainActivity.this, "One or more fields are empty please type in all your details",Toast.LENGTH_SHORT).show();
+                if (user_name.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "One or more fields are empty please type in all your details", Toast.LENGTH_SHORT).show();
                 }
 
                 // Code to check for successful login and to send them to the home screen
-                else
-                {
-                    Login = LoginCheck(user_name,password);
+                else {
+                    Login = LoginCheck(user_name, password);
 
-                    if (Login)
-                    {
-                        Toast.makeText( MainActivity.this, "Login Successful",Toast.LENGTH_SHORT).show();
+                    if (Login) {
+                        Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                         Intent HomePage = new Intent(MainActivity.this, HomePage.class);
                         startActivity(HomePage);
 
                     }
 
                     // Code that returns error if login details are incorrect
-                    else{
+                    else {
                         Login = false;
-                        Toast.makeText( MainActivity.this, "Incorrect Login Details",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Incorrect Login Details", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
 
-        btnSignUp.setOnClickListener(new View.OnClickListener()
-        {
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSignUpPage();
             }
         });
+
 
 
     }
