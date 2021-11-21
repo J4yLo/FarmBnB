@@ -2,6 +2,7 @@ package com.example.farmbnb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,6 +25,7 @@ public class MakeABooking extends AppCompatActivity {
     ArrayAdapter<String> Adapter;
 
     private Button btnBack;
+    private Boolean ItemValidator = false;
 
 
 
@@ -38,7 +40,33 @@ public class MakeABooking extends AppCompatActivity {
 
         DropDownMenu.setAdapter(Adapter);
 
+        DropDownMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (parent.getItemAtPosition(position).equals("Please Select Accommodation Type"))
+                {
+                    ItemValidator = false;
+                }
+                else
+                {
+                    ItemValidator = true;
+                }
 
+            }
+        });
+
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                if (ItemValidator)
+                {
+                    Intent MakeABooking2 = new Intent(MakeABooking.this, MakeABooking2.class);
+                    startActivity(MakeABooking2);
+                }
+            }
+        });
 
 
 
