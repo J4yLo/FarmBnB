@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText editPassword;
     private Button btnLogin;
     private Button btnSignUp;
-
+    boolean Login = false;
+    private String Userinput_Username = "admin";
+    private String Userinput_Password = "admin";
 
 
 
@@ -43,16 +45,33 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    if (user_name == password)
+                    Login = LoginCheck(user_name,password);
+
+                    if (Login)
                     {
                         Toast.makeText( MainActivity.this, "Login Successful",Toast.LENGTH_SHORT).show();
                     }
                     else{
+                        Login = false;
                         Toast.makeText( MainActivity.this, "Incorrect Login Details",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
+
+
+
+    }
+
+    private boolean LoginCheck (String Usrname, String UsrPassword){
+        if (Usrname.equals(Userinput_Username) && UsrPassword.equals(Userinput_Password))
+        {
+            return true;
+        }
+        else
+            {
+            return false;
+        }
 
     }
 
