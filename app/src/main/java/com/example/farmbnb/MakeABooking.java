@@ -55,7 +55,7 @@ public class MakeABooking extends AppCompatActivity {
         //Get Variables From Login To Display UserName On Page
         Intent UID = getIntent();
         UserName = UID.getStringExtra(MainActivity.UserID);
-        Toast.makeText(MakeABooking.this, UserName, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MakeABooking.this, UserName, Toast.LENGTH_SHORT).show();
 
         Adapter = new ArrayAdapter<>(this, R.layout.dropdownmenu,Accommodations);
         DropDownMenu = findViewById(R.id.DropDownMenu);
