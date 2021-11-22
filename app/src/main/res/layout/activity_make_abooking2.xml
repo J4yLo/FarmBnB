@@ -18,32 +18,32 @@
 
     <Button
         android:id="@+id/btnBack3"
-        android:layout_width="43dp"
-        android:layout_height="47dp"
+        android:layout_width="55dp"
+        android:layout_height="57dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="9dp"
-        android:text="H"
+        app:icon="@drawable/abc_vector_test"
         app:layout_constraintBottom_toTopOf="@+id/view9"
         app:layout_constraintEnd_toStartOf="@+id/textView11"
-        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.375" />
 
     <Button
         android:id="@+id/btnLogOut3"
-        android:layout_width="113dp"
-        android:layout_height="48dp"
+        android:layout_width="99dp"
+        android:layout_height="46dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         android:text="Log Out"
         app:layout_constraintBottom_toTopOf="@+id/view9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.192" />
 
     <TextView
         android:id="@+id/textView11"
@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Set Arrival Date"
+        android:textColor="#000000"
         android:textSize="24dp"
         app:layout_constraintBottom_toTopOf="@+id/view9"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,48 +65,63 @@
         android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.132" />
+
+    <View
+        android:id="@+id/view14"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.434" />
 
     <TextView
         android:id="@+id/txtSelectedAccomodation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Selected Accomodation"
-        android:textSize="24dp"
+        android:text="Selected Accomodation:"
+        android:textColor="#090909"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/txtSelectedAccomodation2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view9" />
+        app:layout_constraintTop_toBottomOf="@+id/view9"
+        app:layout_constraintVertical_bias="0.147" />
 
     <TextView
         android:id="@+id/txtSelectedAccomodation2"
         android:layout_width="216dp"
         android:layout_height="38dp"
-        android:layout_marginTop="116dp"
         android:text="Selected Accomodation"
         android:textAlignment="center"
         android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/view14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view9" />
+        app:layout_constraintTop_toBottomOf="@+id/view9"
+        app:layout_constraintVertical_bias="0.406" />
 
     <TextView
         android:id="@+id/Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:text="Date of arrival:"
+        android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSelectedAccomodation2" />
+        app:layout_constraintTop_toBottomOf="@+id/view14" />
 
     <TextView
         android:id="@+id/date2"
@@ -115,10 +131,9 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/ArrivalDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Date"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintVertical_bias="0.436" />
 
     <TextView
         android:id="@+id/ArrivalDate"
@@ -126,10 +141,11 @@
         android:layout_height="wrap_content"
         android:onClick="openDatePicker"
         android:text="Arrival Date"
+        android:textColor="#0FA8AE"
         android:textSize="28dp"
         app:layout_constraintBottom_toTopOf="@+id/btnSelectDeparture"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Date"
-        app:layout_constraintVertical_bias="0.664" />
+        app:layout_constraintVertical_bias="0.745" />
 </androidx.constraintlayout.widget.ConstraintLayout>

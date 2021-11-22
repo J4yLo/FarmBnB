@@ -20,31 +20,32 @@
 
     <Button
         android:id="@+id/btnLogOut2"
-        android:layout_width="113dp"
-        android:layout_height="48dp"
+        android:layout_width="100dp"
+        android:layout_height="46dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
-        android:text="Log Out"
+        android:text="Log out"
         app:layout_constraintBottom_toTopOf="@+id/view8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.12" />
 
     <Button
         android:id="@+id/btnBack2"
-        android:layout_width="43dp"
-        android:layout_height="47dp"
+        android:layout_width="58dp"
+        android:layout_height="63dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="11dp"
-        android:text="H"
+        android:textAlignment="center"
+        app:icon="@drawable/abc_vector_test"
         app:layout_constraintBottom_toTopOf="@+id/view8"
         app:layout_constraintEnd_toStartOf="@+id/textView9"
-        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintHorizontal_bias="0.219"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.742" />
 
     <View
         android:id="@+id/view8"
@@ -53,10 +54,10 @@
         android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.13" />
 
     <TextView
         android:id="@+id/textView9"
@@ -64,6 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Make A Booking"
+        android:textColor="#000000"
         android:textSize="24dp"
         app:layout_constraintBottom_toTopOf="@+id/view8"
         app:layout_constraintEnd_toEndOf="parent"

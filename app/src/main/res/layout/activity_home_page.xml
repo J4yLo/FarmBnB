@@ -13,10 +13,10 @@
         android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.131" />
 
     <TextView
         android:id="@+id/textView7"
@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="Home"
+        android:textColor="#000000"
         android:textSize="24dp"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Welcome to farm BnB"
+        android:textColor="#67C6AB"
         android:textSize="24dp"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:text="User"
+        android:textColor="#776D6D"
         android:textSize="24dp"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
