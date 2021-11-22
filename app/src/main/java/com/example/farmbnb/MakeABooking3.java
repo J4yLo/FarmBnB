@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -60,6 +61,7 @@ public class MakeABooking3 extends AppCompatActivity {
             public void onClick(View v) {
 
                 openHomePage();
+                Toast.makeText(MakeABooking3.this, "Booking Confirmed", Toast.LENGTH_SHORT).show();
             }
         });
 

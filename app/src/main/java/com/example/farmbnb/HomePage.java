@@ -51,6 +51,8 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+
+        // Code that takes the user to the History page
         btnViewBookingHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +79,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void ViewHistory(){
-        //Intent MakeABooking = new Intent(HomePage.this, MakeABooking.class);
-        //startActivity(MakeABooking);
+        Intent ViewHistory = new Intent(HomePage.this, BookingHistory.class);
+        startActivity(ViewHistory);
     }
 }
