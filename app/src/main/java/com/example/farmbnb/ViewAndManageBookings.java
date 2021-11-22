@@ -35,7 +35,7 @@ public class ViewAndManageBookings extends AppCompatActivity {
 
 
 
-        Toast.makeText(ViewAndManageBookings.this, UserName, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(ViewAndManageBookings.this, UserName, Toast.LENGTH_SHORT).show();
 
 
         //Code for initiating button links

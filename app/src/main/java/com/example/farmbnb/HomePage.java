@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
 
@@ -33,6 +34,10 @@ public class HomePage extends AppCompatActivity {
         //Get Variables From Login To Display UserName On Page
         Intent UserID = getIntent();
         String UserName = UserID.getStringExtra(MainActivity.UserID);
+
+        Toast.makeText(HomePage.this, "Selected Accommodation ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(HomePage.this, "Arrival ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(HomePage.this, "Departure ", Toast.LENGTH_SHORT).show();
 
 
 
