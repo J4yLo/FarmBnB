@@ -11,14 +11,12 @@
       android:id="@+id/date5"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Click On Date Below To Set Date"
+      android:layout_marginTop="56dp"
+      android:text="Click On Date Above To Set Date"
       android:textSize="15dp"
-      app:layout_constraintBottom_toTopOf="@+id/DepartureDate"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.494"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/date4"
-      app:layout_constraintVertical_bias="0.484" />
+      app:layout_constraintTop_toBottomOf="@+id/date4" />
 
   <TextView
       android:id="@+id/textView13"
@@ -29,6 +27,7 @@
       android:textSize="24dp"
       app:layout_constraintBottom_toTopOf="@+id/view10"
       app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.0" />
@@ -37,19 +36,18 @@
       android:id="@+id/date4"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="76dp"
+      android:layout_marginTop="64dp"
       android:text="Date of Departure:"
       android:textSize="20dp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/txtSelectedAccomodation8" />
+      app:layout_constraintTop_toBottomOf="@+id/txtSelectedAccomodation7" />
 
   <TextView
       android:id="@+id/txtSelectedAccomodation5"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="32dp"
+      android:layout_marginTop="68dp"
       android:text="Selected Accomodation"
       android:textSize="24dp"
       app:layout_constraintBottom_toTopOf="@+id/txtSelectedAccomodation2"
@@ -59,43 +57,30 @@
       app:layout_constraintTop_toBottomOf="@+id/view10" />
 
   <TextView
+      android:id="@+id/txtSelectedAccomodation3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:text="Current Details"
+      android:textSize="24dp"
+      app:layout_constraintBottom_toTopOf="@+id/txtSelectedAccomodation5"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.063"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/view10"
+      app:layout_constraintVertical_bias="0.208" />
+
+  <TextView
       android:id="@+id/txtSelectedAccomodation7"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="28dp"
+      android:layout_marginTop="44dp"
       android:text="Selected Arrival Date"
       android:textSize="24dp"
       app:layout_constraintBottom_toTopOf="@+id/txtSelectedAccomodation2"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/txtSelectedAccomodation6" />
-
-  <TextView
-      android:id="@+id/txtSelectedAccomodation6"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="496dp"
-      android:text="Selected Accomodation"
-      android:textSize="20dp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/txtSelectedAccomodation5"
-      app:layout_constraintVertical_bias="0.333" />
-
-  <TextView
-      android:id="@+id/txtSelectedAccomodation8"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Selected Arrival Date"
-      android:textSize="20dp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/txtSelectedAccomodation7"
-      app:layout_constraintVertical_bias="0.037" />
+      app:layout_constraintTop_toBottomOf="@+id/txtSelectedAccomodation5" />
 
   <Button
       android:id="@+id/btnConfirmBooking"
@@ -111,16 +96,15 @@
       android:id="@+id/DepartureDate"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="52dp"
+      android:layout_marginBottom="72dp"
       android:onClick="openDatePicker"
       android:text="Departure Date"
       android:textSize="28dp"
       app:layout_constraintBottom_toTopOf="@+id/btnConfirmBooking"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.504"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/date4"
-      app:layout_constraintVertical_bias="0.265" />
+      app:layout_constraintTop_toBottomOf="@+id/date5"
+      app:layout_constraintVertical_bias="1.0" />
 
   <Button
       android:id="@+id/btnBack4"
@@ -148,6 +132,18 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.098" />
+
+  <View
+      android:id="@+id/view13"
+      android:layout_width="0dp"
+      android:layout_height="1dp"
+      android:background="@color/black"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.416" />
 
   <Button
       android:id="@+id/btnLogOut4"

@@ -25,10 +25,19 @@ public class MakeABooking extends AppCompatActivity {
     AutoCompleteTextView DropDownMenu;
     ArrayAdapter<String> Adapter;
 
+    // Variables to pass onto next view
+    public static final String UserID = "com.example.farmbnb.UserID";
+    public static final String AccommodationType = "com.example.farmbnb.AccommodationType";
+
     private Button btnBack2;
     private Button btnSelectBooking;
     private Boolean ItemValidator = false;
     private Button btnLogOut2;
+    private String item;
+    private String UserName ="Error";
+
+
+
 
 
 
@@ -41,6 +50,12 @@ public class MakeABooking extends AppCompatActivity {
         btnBack2 = findViewById(R.id.btnBack2);
         btnLogOut2 = findViewById(R.id.btnLogOut2);
         btnSelectBooking = findViewById(R.id.btnSelectBooking);
+
+
+        //Get Variables From Login To Display UserName On Page
+        Intent UID = getIntent();
+        UserName = UID.getStringExtra(MainActivity.UserID);
+        Toast.makeText(MakeABooking.this, UserName, Toast.LENGTH_SHORT).show();
 
         Adapter = new ArrayAdapter<>(this, R.layout.dropdownmenu,Accommodations);
         DropDownMenu = findViewById(R.id.DropDownMenu);
@@ -59,6 +74,8 @@ public class MakeABooking extends AppCompatActivity {
                 else
                 {
                     ItemValidator = true;
+                    item = parent.getItemAtPosition(position).toString();
+                    Toast.makeText(MakeABooking.this, item, Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -73,7 +90,11 @@ public class MakeABooking extends AppCompatActivity {
                 if (ItemValidator)
                 {
                     Intent MakeABooking2 = new Intent(MakeABooking.this, MakeABooking2.class);
+                    MakeABooking2.putExtra(UserID, UserName);
+                    MakeABooking2.putExtra(AccommodationType, item);
+
                     startActivity(MakeABooking2);
+                    //Toast.makeText(MakeABooking.this, Accomo, Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -108,6 +129,7 @@ public class MakeABooking extends AppCompatActivity {
 
     public void openHomePage(){
         Intent HomePage = new Intent(MakeABooking.this, HomePage.class);
+        HomePage.putExtra(UserID, UserName);
         startActivity(HomePage);
     }
 }

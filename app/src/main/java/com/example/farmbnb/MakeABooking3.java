@@ -16,17 +16,39 @@ import java.util.Calendar;
 
 public class MakeABooking3 extends AppCompatActivity {
 
+    // Variables to pass onto next view
+    public static final String UserID = "com.example.farmbnb.UserID";
+
+    // Variables for current form
     private DatePickerDialog Date2;
     private Button btnSelectDeparture;
     private Button btnLogOut4;
     private Button btnBack4;
     private Button btnConfirmBooking;
     private TextView DepartureDate;
-
+    private TextView txtSelectedAccomodation5;
+    private TextView txtSelectedAccomodation7;
+    private String UserName = "Error";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_abooking3);
+
+
+
+
+        // Get Variables From previous Form
+        Intent Accommodation = getIntent();
+        String Accom = Accommodation.getStringExtra(MakeABooking2.Accommodation);
+
+        Intent getDates = getIntent();
+        String Dates = getDates.getStringExtra(MakeABooking2.DateOfArrival);
+
+        Intent UID = getIntent();
+        UserName = UID.getStringExtra(MakeABooking2.UserID);
+
+
+        //Toast.makeText(MakeABooking3.this, UserName, Toast.LENGTH_SHORT).show();
 
 
         DepartureDate = findViewById(R.id.DepartureDate);
@@ -34,6 +56,12 @@ public class MakeABooking3 extends AppCompatActivity {
         btnConfirmBooking = findViewById(R.id.btnConfirmBooking);
         btnBack4 = findViewById(R.id.btnBack4);
         btnLogOut4 = findViewById(R.id.btnLogOut4);
+        txtSelectedAccomodation5 = findViewById(R.id.txtSelectedAccomodation5);
+        txtSelectedAccomodation7 = findViewById(R.id.txtSelectedAccomodation7);
+
+        // Set variables passed on from previous form
+        txtSelectedAccomodation5.setText(Accom);
+        txtSelectedAccomodation7.setText(Dates);
 
 
         DepartureDate.setText(getdate());
@@ -124,6 +152,7 @@ public class MakeABooking3 extends AppCompatActivity {
 
     public void openHomePage(){
         Intent HomePage = new Intent(MakeABooking3.this, HomePage.class);
+        HomePage.putExtra(UserID, UserName);
         startActivity(HomePage);
     }
 

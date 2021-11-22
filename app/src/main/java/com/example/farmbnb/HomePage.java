@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class HomePage extends AppCompatActivity {
 
@@ -14,6 +15,11 @@ public class HomePage extends AppCompatActivity {
     private Button btnMakeABooking;
     private Button btnLogOut;
     private Button btnViewBookingHistory;
+    private TextView txtUser;
+    private String User_ID = "Error";
+
+    // Variables to pass onto next form
+    public static final String UserID = "com.example.farmbnb.UserID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +28,22 @@ public class HomePage extends AppCompatActivity {
 
 
 
+
+
+        //Get Variables From Login To Display UserName On Page
+        Intent UserID = getIntent();
+        String UserName = UserID.getStringExtra(MainActivity.UserID);
+
+
+
         btnViewAndManageBookings = findViewById(R.id.btnViewAndManageBookings);
         btnMakeABooking = findViewById(R.id.btnMakeABooking);
         btnLogOut = findViewById(R.id.btnLogOut);
         btnViewBookingHistory = findViewById(R.id.btnViewBookingHistory);
+        txtUser = findViewById(R.id.txtUser);
+
+        // Display User ID in View
+        txtUser.setText(UserName);
 
         // Code that returns user to login page
         btnLogOut.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +56,9 @@ public class HomePage extends AppCompatActivity {
         // Code that takes the user to the view and manage bookings page
         btnViewAndManageBookings.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
+                User_ID = UserName;
                 openViewAndManageBookingsPage();
             }
         });
@@ -47,6 +67,7 @@ public class HomePage extends AppCompatActivity {
         btnMakeABooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                User_ID = UserName;
                 MakeABooking();
             }
         });
@@ -70,11 +91,13 @@ public class HomePage extends AppCompatActivity {
 
     public void openViewAndManageBookingsPage(){
         Intent ViewAndManageBookings = new Intent(HomePage.this, ViewAndManageBookings.class);
+        ViewAndManageBookings.putExtra(UserID, User_ID);
         startActivity(ViewAndManageBookings);
     }
 
     public void MakeABooking(){
         Intent MakeABooking = new Intent(HomePage.this, MakeABooking.class);
+        MakeABooking.putExtra(UserID, User_ID);
         startActivity(MakeABooking);
     }
 

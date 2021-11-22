@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -20,6 +21,15 @@ public class MakeABooking2 extends AppCompatActivity {
     private Button btnLogOut3;
     private Button btnBack3;
     private TextView ArrivalDate;
+    private TextView txtSelectedAccomodation2;
+    private String SelectedDate = "None Selected Error";
+    private String Acc = "None Selected Error";
+    private String UserName = "Error";
+
+    // Variables to pass onto next view
+    public static final String DateOfArrival = "com.example.farmbnb.DateOfArrival";
+    public static final String Accommodation = "com.example.farmbnb.Accommodation";
+    public static final String UserID = "com.example.farmbnb.UserID";
 
 
 
@@ -29,10 +39,33 @@ public class MakeABooking2 extends AppCompatActivity {
         setContentView(R.layout.activity_make_abooking2);
 
 
+
+
+        //Get Variables From Login To Display UserName On Page
+        Intent AccommodationType = getIntent();
+        String Accom = AccommodationType.getStringExtra(MakeABooking.AccommodationType);
+
+
         ArrivalDate = findViewById(R.id.ArrivalDate);
         btnSelectDeparture = findViewById(R.id.btnSelectDeparture);
         btnLogOut3 = findViewById(R.id.btnLogOut3);
         btnBack3 = findViewById(R.id.btnBack3);
+        txtSelectedAccomodation2 = findViewById(R.id.txtSelectedAccomodation2);
+
+
+        //Get Variables From Previous View
+        Intent UserID = getIntent();
+        UserName = UserID.getStringExtra(MakeABooking.UserID);
+        //Toast.makeText(MakeABooking2.this, UserName, Toast.LENGTH_SHORT).show();
+
+
+
+
+
+
+        // Display Selected Accommodation in View
+        txtSelectedAccomodation2.setText(Accom);
+
 
         ArrivalDate.setText(getdate());
         arrivalDateSelector();
@@ -58,7 +91,8 @@ public class MakeABooking2 extends AppCompatActivity {
         btnSelectDeparture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Acc = Accom;
+                SelectedDate = ArrivalDate.getText().toString();
                 openDepartureDates();
             }
         });
@@ -85,6 +119,8 @@ public class MakeABooking2 extends AppCompatActivity {
                 month = month + 1;
                 String chosenDate = dateFormat(day, month, year);
                 ArrivalDate.setText(chosenDate);
+                SelectedDate = chosenDate;
+
             }
         };
 
@@ -121,12 +157,17 @@ public class MakeABooking2 extends AppCompatActivity {
 
     public void openHomePage(){
         Intent HomePage = new Intent(MakeABooking2.this, HomePage.class);
+        HomePage.putExtra(UserID, UserName);
         startActivity(HomePage);
     }
 
     public void openDepartureDates(){
-        Intent MakeABooking3 = new Intent(MakeABooking2.this, MakeABooking3.class);
-        startActivity(MakeABooking3);
+        Intent openDepartureDates = new Intent(MakeABooking2.this, MakeABooking3.class);
+        openDepartureDates.putExtra(Accommodation, Acc);
+        openDepartureDates.putExtra(DateOfArrival, SelectedDate);
+        openDepartureDates.putExtra(UserID, UserName);
+        startActivity(openDepartureDates);
+
     }
 
 }

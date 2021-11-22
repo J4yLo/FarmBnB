@@ -46,6 +46,19 @@
         app:layout_constraintTop_toBottomOf="@+id/view6"
         app:layout_constraintVertical_bias="0.581" />
 
+    <TextView
+        android:id="@+id/txtUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="User"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6"
+        app:layout_constraintVertical_bias="0.581" />
+
     <Button
         android:id="@+id/btnViewAndManageBookings"
         android:layout_width="205dp"

@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private String Userinput_Username = "admin";
     private String Userinput_Password = "admin";
 
+    // Variables to pass onto next view
+    public static final String UserID = "com.example.farmbnb.UserID";
+
 
 
 
@@ -35,10 +38,13 @@ public class MainActivity extends AppCompatActivity {
         btnSignUp = findViewById(R.id.btnSignUp);
 
 
+
+
         // Method for Logging in using the input fields
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String user_name = editUsername.getText().toString();
                 String password = editPassword.getText().toString();
 
@@ -54,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     if (Login) {
                         Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                         Intent HomePage = new Intent(MainActivity.this, HomePage.class);
+                        HomePage.putExtra(UserID, user_name);
                         startActivity(HomePage);
 
                     }

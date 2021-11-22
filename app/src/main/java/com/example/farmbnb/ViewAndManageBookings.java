@@ -9,21 +9,33 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class ViewAndManageBookings extends AppCompatActivity {
+    // Variables to pass onto next view
+    public static final String UserID = "com.example.farmbnb.UserID";
 
+    //Variables for current page
     private Button btnLogOut5;
     private Button btnBack5;
     private Button btnCancelBooking;
     private Button btnViewHistory;
+    private String UserName = "Error";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_and_manage_bookings);
 
+        //Get Variables From previous Form
+        Intent User_ID = getIntent();
+        UserName = User_ID.getStringExtra(HomePage.UserID);
+
         btnLogOut5 = findViewById(R.id.btnLogOut5);
         btnBack5 = findViewById(R.id.btnBack5);
         btnCancelBooking = findViewById(R.id.btnCancelBooking);
         btnViewHistory = findViewById(R.id.btnViewHistory);
+
+
+
+        Toast.makeText(ViewAndManageBookings.this, UserName, Toast.LENGTH_SHORT).show();
 
 
         //Code for initiating button links
@@ -51,7 +63,6 @@ public class ViewAndManageBookings extends AppCompatActivity {
         btnCancelBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RefreshPage();
                 Toast.makeText(ViewAndManageBookings.this, "Booking Cancelled", Toast.LENGTH_SHORT).show();
             }
         });
@@ -70,13 +81,10 @@ public class ViewAndManageBookings extends AppCompatActivity {
         startActivity(MainActivity);
     }
 
-    public void RefreshPage(){
-        Intent RefreshPage = new Intent(ViewAndManageBookings.this, ViewAndManageBookings.class);
-        startActivity(RefreshPage);
-    }
 
     public void OpenHomePage(){
         Intent OpenHomePage = new Intent(ViewAndManageBookings.this, HomePage.class);
+        OpenHomePage.putExtra(UserID, UserName);
         startActivity(OpenHomePage);
     }
 }
